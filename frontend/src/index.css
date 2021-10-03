@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+a.active {
+  @apply bg-red-500 text-white;
+}
+
+input,
+select {
+  @apply px-2 py-1 w-full border-gray-500 focus:border-blue-500 border-2 outline-none rounded;
+}
+
+select {
+  @apply py-1 appearance-none;
+}
+
+table.bordered th {
+  border: 1px solid rgb(207, 203, 203) !important;
+}
+
+table.bordered td {
+  border: 1px solid rgb(207, 203, 203) !important;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: rgb(175, 171, 171);
+  color: aliceblue;
+  pointer-events: none;
+}
+
+@media print {
+  #printable_logo {
+    display: block;
+  }
+
+  #printable_table th:last-of-type,
+  #printable_table td:last-of-type {
+    display: none;
+  }
+}
+
+@media print {
+  .noprint {
+    display: none;
+  }
+}

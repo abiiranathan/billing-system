@@ -1,0 +1,33 @@
+{
+  "name": "bnf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "upload-consumables": "node scripts/upload-consumables.csv",
+    "upload-drugs": "node scripts/upload-drugs.csv",
+    "upload-services": "node scripts/upload-services.csv",
+    "upload-tests": "node scripts/upload-tests.csv"
+  },
+  "keywords": [],
+  "author": "Abiira Nathan <nabiira2by2@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^16.10.2",
+    "prisma": "^3.1.1",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.1.1",
+    "@types/express": "^4.17.13",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pm2": "^5.1.2"
+  }
+}

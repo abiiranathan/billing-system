@@ -1,0 +1,61 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Drug {
+  id           String  @id @default(uuid()) @db.Uuid
+  name         String
+  dosage       String?
+  costPrice    Int
+  sellingPrice Int
+  batchNumber  String? @db.VarChar(25)
+  expiryDate   String? @db.VarChar(7)
+
+  @@unique([name])
+  @@map("drugs")
+}
+
+model Investigation {
+  id           String @id @default(uuid()) @db.Uuid
+  name         String
+  sellingPrice Int
+
+  @@map("investigations")
+}
+
+// Services and procedures
+model Service {
+  id           String @id @default(uuid()) @db.Uuid
+  name         String
+  sellingPrice Int
+
+  @@map("services")
+}
+
+model Consumable {
+  id           String @id @default(uuid()) @db.Uuid
+  name         String
+  costPrice    Int
+  sellingPrice Int
+
+  @@map("consumables")
+}
+
+model User {
+  id       String @id @default(uuid()) @db.Uuid
+  name     String
+  username String @unique
+  password String
+  role     Role   @default(PHARMACY)
+}
+
+enum Role {
+  ADMIN
+  PHARMACY
+  DOCTOR
+}
